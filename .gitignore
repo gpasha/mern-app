@@ -24,3 +24,6 @@ yarn-error.log*
 
 # special keys
 keys/keys.dev.js
+
+#config folder
+/config
