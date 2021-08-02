@@ -1,0 +1,26 @@
+{
+  "name": "mern-app",
+  "version": "1.0.0",
+  "description": "MERN application",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gpasha/mern-app.git"
+  },
+  "keywords": [
+    "MERN",
+    "MongoDB",
+    "Express",
+    "React",
+    "Node"
+  ],
+  "author": "Pavel Glebik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gpasha/mern-app/issues"
+  },
+  "homepage": "https://github.com/gpasha/mern-app#readme"
+}
