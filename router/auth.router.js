@@ -12,7 +12,7 @@ router.post(
         check('email', 'Non-correct email!').isEmail(),
         check('password', 'Min length of the password is 6 symbols').isLength({min: 6})
     ],
-    async (res, req) => {
+    async (req, res) => {
         try {
             const errors = validationResult(req)
 
@@ -49,8 +49,9 @@ router.post(
         check('email', 'Non-correct email!').normalizeEmail().isEmail(),
         check('password', 'Min length of the password is 6 symbols').exists()
     ],
-    async (res, req) => {
+    async (req, res) => {
         try {
+            console.log('req.body: ', req.body);
             const errors = validationResult(req)
 
             if (!errors.isEmpty()) {
