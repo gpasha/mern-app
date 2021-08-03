@@ -1,5 +1,7 @@
 const {Router} = require('express')
 const router = Router()
+const jwt = require('jsonwebtoken')
+const config = require('config')
 const User = require('../models/user')
 const bcrypt = require('bcryptjs')
 const {check, validationResult} = require('express-validator')
@@ -71,12 +73,16 @@ router.post(
                 return res.status(400).json({message: 'There are some troubles of login and password'})
             }
 
-            // const hashedPassword = await bcrypt.hash(password, 12)
-            // const user = new User({
-            //     email, password: hashedPassword
-            // })
-            // await user.save()
-            // res.status(201).json({message: 'The user was successfully created!'})
+            const token = jwt.sign(
+                { userId: user.id },
+                config.get('jwtSecret'),
+                { expiresIn: '1h' }
+            )
+
+            res.status(200).json({
+                token,
+                userId: user.id
+            })
         } catch (e) {
             console.log(e)
             res.status(500).json({message: 'Something went wrong'})
