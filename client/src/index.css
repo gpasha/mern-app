@@ -4,6 +4,16 @@
     margin-right: 1rem;
 }
 
+.pt-2 {
+    padding-top: 2rem !important;
+}
+
 .nav-wrapper {
     padding: 0 2rem;
+}
+
+.loader-wrapper {
+    display: flex;
+    justify-content: center;
+    padding-top: 2rem;
 }

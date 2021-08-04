@@ -26,7 +26,7 @@ router.post('/generate', authMiddlewear, async (req, res) => {
 
         await link.save()
 
-        res.status(201).json(link)
+        res.status(201).json({link})
 
     } catch (e) {
         console.log(e)
@@ -38,7 +38,7 @@ router.get('/', authMiddlewear, async (req, res) => {
     try {
         console.log('req.user: ', req.user)
         const links = await Link.find({ owner: req.user.userId })
-        res.json(links)
+        res.json({links})
     } catch (e) {
         console.log(e)
         res.status(500).json({message: 'Something went wrong'})
@@ -48,7 +48,7 @@ router.get('/', authMiddlewear, async (req, res) => {
 router.get('/:id', authMiddlewear, async (req, res) => {    
     try {
         const link = await Link.findById(req.params.id)
-        res.json(link)
+        res.json({link})
     } catch (e) {
         console.log(e)
         res.status(500).json({message: 'Something went wrong'})
