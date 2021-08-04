@@ -7,6 +7,7 @@ const app = express()
 app.use(express.json({ extended: true }))
 
 app.use('/api/auth', require('./router/auth.router'))
+app.use('/api/link', require('./router/link.router'))
 
 const PORT = config.get('port') || 5000
 const MONGO_URI = config.get('mongoUri')
