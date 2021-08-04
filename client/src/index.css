@@ -8,6 +8,10 @@
     padding-top: 2rem !important;
 }
 
+.ta-center {
+    text-align: center;
+}
+
 .nav-wrapper {
     padding: 0 2rem;
 }
