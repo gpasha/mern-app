@@ -36,7 +36,6 @@ router.post('/generate', authMiddlewear, async (req, res) => {
 
 router.get('/', authMiddlewear, async (req, res) => {
     try {
-        console.log('req.user: ', req.user)
         const links = await Link.find({ owner: req.user.userId })
         res.json(links)
     } catch (e) {
